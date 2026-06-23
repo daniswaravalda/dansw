@@ -11,10 +11,11 @@
             text-align: center;
             padding-top: 100px;
             margin: 0;
+            justify-content: center;
         }
         
         /* --- Navbar Styling --- */
-        .navbar {
+        .navbars {
             position: fixed;
             top: 0;
             left: 0;
@@ -32,7 +33,7 @@
             transition: all 0.3s ease;
         }
 
-        .navbar-container {
+        .navbars-container {
             width: 100%;
             max-width: 1200px;
             padding: 0 30px;
@@ -183,7 +184,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('/img/backload.webp'); 
+            background-image: url('/img/backload_plus.webp'); 
             background-size: cover;
             background-position: center;
             z-index: -2;
@@ -198,7 +199,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.7); /* Warna putih transparan */
+            background: rgba(190, 190, 190, 0.7); /* Warna putih transparan */
             z-index: -1;
         }
 
@@ -228,23 +229,41 @@
         }
 
         .btn-primary {
-            position: relative;
-            z-index: 1;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* position: relative;
+            
+            background: linear-gradient(135deg, #88BDA4 0%, #95CCDD 100%);
             color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s; */
+
             text-decoration: none;
             border-radius: 12px;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1;
+            padding: 12px 30px;
+            background: rgba(50, 128, 201, 0.719);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            background: rgba(57, 144, 226, 0.719);
         }
 
+        .btn-primary:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
+        }
 
         
         /* --- Gaya untuk Section Konten (Page) --- */
@@ -281,6 +300,58 @@
             margin-bottom: 20px;
             text-align: justify;
         }
+
+
+
+ /* --- Gaya untuk Section Konten (Page) --- */
+        .standar-section {
+            padding: 40px 20px;
+            padding-bottom: 20px;
+            background-color: #ffffff;
+            max-width: 900px;
+            margin: 0 auto;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .standar-section h2 {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Garis gradien kecil di bawah judul */
+        .standar-section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 10px auto 0;
+            border-radius: 2px;
+            
+        }
+
+        .standar-section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+        .card-section {
+            justify-content: center;
+            padding: 40px 20px;
+            padding-bottom: 90px;
+            background-color: #ffffff;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
 
 
         /* --- Responsif (Tablet & Mobile) --- */
@@ -334,4 +405,60 @@
                 /* Nonaktifkan hover desktop di mobile */
                 transform: none;
             }
+        }
+
+
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            /* background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 8px;
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); */
+            background: rgba(224, 242, 254, 0.1);
+            backdrop-filter: blur(10px) saturate(120%);
+            -webkit-backdrop-filter: blur(12px) saturate(120%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 8px 24px 0 rgba(12, 74, 110, 0.15),
+                inset 0px 0px 4px 2px rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            z-index: 1000;
+            font-family: serif;
+            font-size: 16px;
+        }
+
+        footer ::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            border-radius: inherit;
+            /* angled edge reflection */
+            background: linear-gradient(to left top, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+            z-index: 1;
+        }
+
+        footer ::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            border-radius: inherit;
+            /* subtle top-to-bottom sheen */
+            background: linear-gradient(to bottom, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 100%);
+            z-index: 1;
         }
