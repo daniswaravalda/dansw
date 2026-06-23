@@ -1,0 +1,113 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    overflow: hidden; /* Mencegah scroll saat splash screen muncul */
+    background-color: #222; /* Warna dasar mencegah layar putih berkedip */
+}
+
+/* --- Gaya Splash Screen --- */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/img/backload.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Transisi untuk efek memudar */
+    transition: opacity 0.8s ease-out; 
+}
+
+/* Class ini akan dipicu oleh JavaScript */
+.splash-screen.fade-out {
+    opacity: 0;
+}
+
+.splash-content {
+    text-align: center;
+    color: white;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+/* Animasi Bulatan Loading */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+/* --- Keyframes --- */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* --- Beta --- */
+
+/* --- Gaya Animasi Titik Memudar --- */
+.loader-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Jarak antar titik */
+    margin: 0 auto;
+}
+
+.loader-dots span {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%; /* Membuat jadi bulat */
+    display: inline-block;
+    /* Memanggil animasi bernama 'fadeDots' */
+    animation: fadeDots 1.4s infinite ease-in-out both;
+}
+
+/* Memberikan jeda waktu animasi agar tidak barengan */
+.loader-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loader-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+/* Keyframes untuk efek memudar dan mengecil */
+@keyframes fadeDots {
+    0%, 80%, 100% { 
+        transform: scale(0);
+        opacity: 0;
+    } 
+    40% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dansw Website</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Navigasi -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="home.html" class="logo">Dansw<span>.</span></a>
+
+            <!-- Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+                </li>
+                
+                <!-- Menu Dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Software <i class="fas fa-chevron-down" style="font-size: 12px; margin-top: 3px;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a href="#" class="dropdown-link">Recommended</a></li>
+                        <li class="dropdown-item"><a href="#" class="dropdown-link">Appstore</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">Tentang</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Form</a>
+                </li>
+            </ul>
+
+            <!-- Hamburger Button untuk Layar Kecil -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Konten Utama (Hero Section) -->
+    <section class="hero">
+        <h1>Selamat Datang di Dansw.com</h1>
+        <p>Situs ini masih dalam Beta. Jadi mohon maaf jika situs ini belum stabil atau sering bug</p>
+        <a href="#page" class="btn-primary">Start Now</a>
+    </section>
+
+    <section id="page" class="content-section">
+        <h2>Tentang Website Ini</h2>
+        <p>Website ini dirancang untuk memberikan pengalaman pengguna yang modern dan intuitif. Dengan menggunakan teknologi web terbaru seperti HTML5, CSS3, dan JavaScript, kami memastikan bahwa setiap interaksi terasa mulus. Efek transisi yang halus, tata letak yang responsif, dan desain visual yang menarik adalah fokus utama dalam pengembangan halaman ini.</p>
+        
+        <p>Desain antarmuka pada website ini mengadopsi gaya modern minimalis dengan sentuhan efek kaca (<em>glassmorphism</em>) pada bilah navigasi. Hal ini tidak hanya memberikan estetika yang memukau, tetapi juga memastikan konten tetap menjadi pusat perhatian tanpa terlihat penuh sesak. Kombinasi warna gradien yang digunakan dipilih secara khusus untuk mencerminkan nuansa dinamis dan futuristik.</p>
+
+        <p>Selain keindahan visual, kemudahan akses juga menjadi prioritas. Animasi yang Anda lihat, mulai dari efek memudar saat pertama kali memuat halaman hingga pergerakan yang mulus saat menggulir ke bagian ini (<em>smooth scrolling</em>), telah dirancang sedemikian rupa agar memberikan kenyamanan maksimal. Kami percaya bahwa desain yang baik harus seimbang antara estetika dan fungsionalitas.</p>
+    </section>
+
+    <audio id="radioStream" autoplay>
+        <source src="https://jizfm-streaming.gntr.net/listen/jizfm/jizfm" type="audio/aac">
+        Browser kamu tidak mendukung streaming audio.
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
