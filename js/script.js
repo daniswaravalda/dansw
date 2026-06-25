@@ -120,7 +120,7 @@
     },
     { threshold: 0.1 }
   )
-  document.querySelectorAll('.hero-content, .about-image, .about-content, .skill-card, .store-card, .contact-info, .contact-form').forEach((el) => {
+  document.querySelectorAll('.hero-content, .about-image, .about-content, .skill-card, .project-card, .contact-info, .contact-form').forEach((el) => {
     el.classList.add('fade-in')
     scrollAnim.observe(el)
   })
@@ -147,19 +147,19 @@
     }, 2500)
   })
 
-  const storeGrid = document.getElementById('storeGrid');
-  if (storeGrid) {
+  const projectGrid = document.getElementById('projectGrid');
+  if (projectGrid) {
     const viewBtns = document.querySelectorAll('.view-btn');
-    const savedView = localStorage.getItem('storeView') || 'card';
+    const savedView = localStorage.getItem('projectView') || 'card';
 
     function setView(view) {
-      storeGrid.classList.remove('list-view');
-      if (view === 'list') storeGrid.classList.add('list-view');
+      projectGrid.classList.remove('list-view');
+      if (view === 'list') projectGrid.classList.add('list-view');
       viewBtns.forEach(function (b) {
         b.classList.remove('active');
         if (b.getAttribute('data-view') === view) b.classList.add('active');
       });
-      localStorage.setItem('storeView', view);
+      localStorage.setItem('projectView', view);
     }
 
     setView(savedView);

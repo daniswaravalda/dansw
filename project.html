@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/jpg" href="/img/D_logo.png">
-    <title>Contact</title>
 </head>
 <body>
-    
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-left">
@@ -23,8 +23,8 @@
                     <a href="/index.html" class="nav-link">Home</a>
                     <a href="/about.html" class="nav-link">About</a>
 
-                    <a href="/project.html" class="nav-link">Project</a>
-                    <a href="/contact.html" class="nav-link active">Contact</a>
+                    <a href="/project.html" class="nav-link active">Project</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
                 </div>
                 <div class="nav-actions">
                     <button class="settings-btn" id="settingsBtn" aria-label="Settings">
@@ -40,41 +40,44 @@
         </div>
     </nav>
 
-    <section id="contact" class="section-contact">
+    <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Let's work together</h3>
-                    <p>Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>daniswara.valdarafif@devindonesia.com</span>
+            <div class="project-header">
+                <h2 class="section-title">Projects</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="card" aria-label="Card view"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list" aria-label="List view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div class="projects-grid" id="projectGrid">
+                <div class="project-card" data-price="$29">
+                    <div class="project-image">
+                        <img src="https://media.canva.com/v2/image-resize/format:PNG/height:377/quality:100/uri:ifs%3A%2F%2FM%2Fc59ef732-1240-474d-b711-f57af8083a0c/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAABRdeinOAdj2CBGRyYJDMjhmm3hm0TvNeHMVKF7mFVQF&exp=1782413092&osig=AAAAAAAAAAAAAAAAAAAAACjuQMyptmW53AnMI6O5X6WpbQNXyWYhqH2scjZUHpFq&signer=media-rpc&x-canva-quality=screen" alt="Project Spionase">
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+62 811 2632 902</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jakarta, Indonesia</span>
+                    <div class="project-info">
+                        <h3>Laufey Web Project</h3>
+                        <p>Website ini membahas biografi seorang penyanyi Jazz Bossa-Nova, Laufey Lín Bing Jónsdóttir</p>
+                        <div class="project-tags">
+                            <span>HTML & CSS</span>
+                            <span>Javascript</span>
+                        </div>
+                        <a href="https://laufeywebproject.vercel.app/" target="_blank" class="btn btn-sm">Explore</a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                <div class="project-card" data-price="$49">
+                    <div class="project-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg" alt="image not found">
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                    <div class="project-info">
+                        <h3>Galeri Karya Digital</h3>
+                        <p>---</p>
+                        <div class="project-tags">
+                            <span>HTML & CSS</span>
+                            <span>Javascript & MySQL</span>
+                        </div>
+                        <a href="https://google.com/" class="btn btn-sm">Explore</a>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
