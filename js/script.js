@@ -134,18 +134,64 @@
     })
   })
 
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault()
-    const btn = e.target.querySelector('button[type="submit"]')
-    const orig = btn.textContent
-    btn.textContent = 'Message Sent!'
-    btn.disabled = true
-    setTimeout(() => {
-      btn.textContent = orig
-      btn.disabled = false
-      e.target.reset()
-    }, 2500)
-  })
+  const contactForm = document.getElementById('contactForm')
+  if (contactForm) {
+    var lastSent = 0
+    var cooldown = 60
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault()
+
+      var now = Date.now()
+      var elapsed = (now - lastSent) / 1000
+      if (elapsed < cooldown) {
+        var wait = Math.ceil(cooldown - elapsed)
+        showNotification('Please wait ' + wait + 's before sending again')
+        return
+      }
+
+      var btn = this.querySelector('button[type="submit"]')
+      var formData = new FormData(this)
+      var name = formData.get('name') || this.querySelector('input[placeholder*="Name"]')?.value || ''
+      var email = formData.get('email') || this.querySelector('input[placeholder*="Email"]')?.value || ''
+      var subject = formData.get('subject') || this.querySelector('input[placeholder*="Subject"]')?.value || ''
+      var message = formData.get('message') || this.querySelector('textarea')?.value || ''
+
+      var text = [
+        '*New Contact Message*',
+        '',
+        '*Name:* ' + name,
+        '*Email:* ' + email,
+        '*Subject:* ' + subject,
+        '*Message:* ' + message
+      ].join('\n')
+
+      btn.disabled = true
+      showNotification('Sending...')
+
+      fetch('https://api.telegram.org/bot6334424330:AAEnmh0IPMTz55bEGxeBMEmkX_29k10pxHk/sendMessage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: '5959448918',
+          text: text,
+          parse_mode: 'Markdown'
+        })
+      }).then(function (res) {
+        if (res.ok) {
+          lastSent = Date.now()
+          this.reset()
+          showNotification('Message sent successfully!')
+        } else {
+          showNotification('Failed to send message')
+        }
+        btn.disabled = false
+      }.bind(this)).catch(function () {
+        showNotification('Network error')
+        btn.disabled = false
+      })
+    })
+  }
 
   const projectGrid = document.getElementById('projectGrid');
   if (projectGrid) {
