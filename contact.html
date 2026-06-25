@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,10 @@
             <div class="nav-right">
                 <div class="nav-links">
                     <a href="/index.html" class="nav-link">Home</a>
-                    <a href="/about.html" class="nav-link active">About</a>
+                    <a href="/about.html" class="nav-link">About</a>
 
                     <a href="/store.html" class="nav-link">Stores</a>
-                    <a href="/contact.html" class="nav-link">Contact</a>
+                    <a href="/contact.html" class="nav-link active">Contact</a>
                 </div>
                 <div class="nav-actions">
                     <button class="settings-btn" id="settingsBtn" aria-label="Settings">
@@ -39,31 +39,41 @@
         </div>
     </nav>
 
-    <section id="about" class="section-about">
+    <section id="contact" class="section-contact">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="/img/logo.jpg" alt="About">
-                </div>
-                <div class="about-content">
-                    <p>Hello! I'm a passionate developer who loves creating beautiful, functional websites and applications. With a keen eye for design and a love for clean code, I transform ideas into digital experiences.</p>
-                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source stores, or enjoying a good cup of coffee.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Stores</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">30+</span>
-                            <span class="stat-label">Happy Clients</span>
-                        </div>
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Let's work together</h3>
+                    <p>Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>daniswara.valdarafif@devindonesia.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 811 2632 902</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakarta, Indonesia</span>
                     </div>
                 </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
         </div>
     </section>

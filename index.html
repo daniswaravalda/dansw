@@ -1,23 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="system" data-font-size="normal" data-animation="standard">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title>
-    <link rel="icon" type="image/jpg" href="/img/icon.jpg">
-    <link rel="stylesheet" type="text/css" href="/css/load.css">
+    <title>Dansw</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="splash-screen" class="splash-screen">
-        <div class="splash-content">
-            <h1 class="logo">いらっしゃいませ</h1>
-        <div class="loader-dots">
-            <span></span>
-            <span></span>
-            <span></span>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/index.html" class="nav-logo">Dansw</a>
+            </div>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="/index.html" class="nav-link active">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+
+                    <a href="/store.html" class="nav-link">Stores</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="settings-btn" id="settingsBtn" aria-label="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="hamburger" id="hamburger" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <img src="/img/backload_jp.webp" alt="">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm <span class="gradient-text">Dansw</span></h1>
+            <p class="hero-subtitle">I build beautiful, user-friendly experiences with clean code & creative design.</p>
+            <div class="hero-actions">
+                <a href="#about" class="btn btn-primary">Explore</a>
+                <a href="/contact.html" class="btn btn-outline">Contact Me</a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://wa.me/628112632902" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://www.tiktok.com/@danswr28" class="social-link" aria-label="Tiktok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/d4nsw_4u/" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="/img/logo.jpg" alt="About">
+                </div>
+                <div class="about-content">
+                    <p>Hello! I'm a passionate developer who loves creating beautiful, functional websites and applications. With a keen eye for design and a love for clean code, I transform ideas into digital experiences.</p>
+                    <p>When I'm not coding, you'll find me exploring new technologies, contributing to open-source stores, or enjoying a good cup of coffee.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Stores</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Daniswara. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="settingsModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-cog"></i> Settings</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h4><i class="fas fa-palette"></i> Theme</h4>
+                    <div class="setting-options" data-setting="theme">
+                        <button class="setting-option active" data-value="system">
+                            <i class="fas fa-desktop"></i>
+                            <span>System</span>
+                        </button>
+                        <button class="setting-option" data-value="light">
+                            <i class="fas fa-sun"></i>
+                            <span>Light</span>
+                        </button>
+                        <button class="setting-option" data-value="dark">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h4><i class="fas fa-font"></i> Font Size</h4>
+                    <div class="setting-options" data-setting="fontSize">
+                        <button class="setting-option" data-value="small">
+                            <span>A</span>
+                            <span>Small</span>
+                        </button>
+                        <button class="setting-option active" data-value="normal">
+                            <span>A</span>
+                            <span>Normal</span>
+                        </button>
+                        <button class="setting-option" data-value="bigger">
+                            <span>A</span>
+                            <span>Big</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h4><i class="fas fa-bolt"></i> Animation </h4>
+                    <div class="setting-options" data-setting="animation">
+                        <button class="setting-option" data-value="disable">
+                            <i class="fas fa-stop"></i>
+                            <span>Disable</span>
+                        </button>
+                        <button class="setting-option active" data-value="standard">
+                            <i class="fas fa-play"></i>
+                            <span>Standard</span>
+                        </button>
+                        <button class="setting-option" data-value="smooth">
+                            <i class="fas fa-forward"></i>
+                            <span>Smooth</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="notification" class="notification">Settings saved successfully!</div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
